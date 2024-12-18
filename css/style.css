@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rye&family=Tiny5&display=swap');
+*{
+    padding: 0;margin: 0;
+}
+.body{
+    background: url("../bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    background-size:100vw 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* margin-bottom: 10px; */
+    z-index: 0;
+}
+.headboard{
+    height: 10vh;
+    width: 30vw;
+    background: url(../wood.png);
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 7px;
+    text-align: center;
+    font-size: 50px;
+    font-family: "Rye", serif;
+    z-index: 0;
+}
+#grid{
+    background: linear-gradient(180deg, rgba(221, 255, 103, 1) 0%, rgba(49, 125, 53, 1) 100%);
+    width: 40vw;
+    height: 80vh;
+    border: 2px solid black;
+    border-radius: 8px;
+    display: grid;
+    grid-template-rows: repeat(18,1fr);
+    grid-template-columns: repeat(18,1fr);
+    z-index: 0;
+}
+.head{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(42, 0, 83, 1) 100%);
+    border-radius: 17px;
+    transform: scale(1.1);
+    z-index: 0;
+}
+.SBody{
+    background: linear-gradient(180deg, rgb(69, 0, 138) 0%, rgba(31, 0, 80, 1) 100%);
+    border-radius: 50px;
+    z-index: 0;
+}
+.food{
+    background: linear-gradient(201deg, rgb(255, 200, 0) 0%, rgb(255, 0, 0) 100%);
+    border-radius: 10px;
+    border: 1px solid gold;
+    z-index: 0;
+}
+.intro{
+    width: 50vw;
+    height: 30vh;
+    z-index: 10;
+    position: absolute;
+    text-align: center;
+    font-family: "Rye", serif;
+    background: url(../wood.png);
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}
+.intro>p{
+    font-size: large;
+}
+.GameOver{
+    width: 50vw;
+    height: 30vh;
+    z-index: 10;
+    position: absolute;
+    text-align: center;
+    font-family: "Rye", serif;
+    background: url(../wood.png);
+    opacity: 0.8;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}
+.GameOver>p{
+    font-size: larger;
+}
+.hide{
+    display: none;
+}
+/* .score {
+    position: fixed;
+    right: 20px;
+    top: 15vh;
+    width: 23vw; 
+    height: 75vh;
+    z-index: 7;
+    margin: 15px;
+    border: 5px solid black;
+    border-radius: 15px;
+    background: url(../score_bg.jpeg);
+    font-family: "Rye", serif;
+    padding: 10px;
+    text-align: center;
+    color: rgb(148, 227, 0);
+    text-decoration-line: underline;
+    text-decoration-color: rgb(212, 255, 0);
+} */
