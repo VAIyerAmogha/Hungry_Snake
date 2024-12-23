@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rye&family=Tiny5&display=swap');
-*{
-    padding: 0;margin: 0;
+
+* {
+    padding: 0;
+    margin: 0;
 }
-.body{
+
+.body {
     background: url("../bg.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
-    background-size:100vw 100vh;
+    background-size: 100vw 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,7 +18,8 @@
     /* margin-bottom: 10px; */
     z-index: 0;
 }
-.headboard{
+
+.headboard {
     height: 10vh;
     width: 30vw;
     background: url(../wood.png);
@@ -27,35 +31,40 @@
     font-family: "Rye", serif;
     z-index: 0;
 }
-#grid{
+
+#grid {
     background: linear-gradient(180deg, rgba(221, 255, 103, 1) 0%, rgba(49, 125, 53, 1) 100%);
     width: 40vw;
     height: 80vh;
     border: 2px solid black;
     border-radius: 8px;
     display: grid;
-    grid-template-rows: repeat(18,1fr);
-    grid-template-columns: repeat(18,1fr);
+    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(18, 1fr);
     z-index: 0;
 }
-.head{
+
+.head {
     background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(42, 0, 83, 1) 100%);
     border-radius: 17px;
     transform: scale(1.1);
     z-index: 0;
 }
-.SBody{
+
+.SBody {
     background: linear-gradient(180deg, rgb(69, 0, 138) 0%, rgba(31, 0, 80, 1) 100%);
     border-radius: 50px;
     z-index: 0;
 }
-.food{
+
+.food {
     background: linear-gradient(201deg, rgb(255, 200, 0) 0%, rgb(255, 0, 0) 100%);
     border-radius: 10px;
     border: 1px solid gold;
     z-index: 0;
 }
-.intro{
+
+.intro {
     width: 50vw;
     height: 30vh;
     z-index: 10;
@@ -67,10 +76,16 @@
     border-radius: 10px;
     padding: 5px;
 }
-.intro>p{
+
+.intro>p {
     font-size: large;
 }
-.GameOver{
+
+.intro>p>span {
+    font-size: large;
+}
+
+.GameOver {
     width: 50vw;
     height: 30vh;
     z-index: 10;
@@ -83,12 +98,15 @@
     border-radius: 10px;
     padding: 5px;
 }
-.GameOver>p{
+
+.GameOver>p {
     font-size: larger;
 }
-.hide{
+
+.hide {
     display: none;
 }
+
 /* .score {
     position: fixed;
     right: 20px;

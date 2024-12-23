@@ -12,10 +12,16 @@ let snakeArr = [{ x: 10, y: 13 }];
 let food = { x: 4, y: 7 };
 let a = 1;
 let b = 17;
-let intro = document.querySelector(".intro")
-let GO = document.querySelector(".GameOver")
+let intro = document.querySelector(".intro");
+let GO = document.querySelector(".GameOver");
+let highScore = localStorage.getItem("highScore") || 0;
+let highScoreSpan = document.querySelector("#highscore");
 
 // Game Functions
+
+function updateHighScoreDisplay() {
+  highscoreSpan.innerHTML = highScore;
+}
 
 function main(ctime) {
   window.requestAnimationFrame(main);
@@ -31,12 +37,17 @@ function main(ctime) {
 function isCollide(snake) {
   // bumping into snake
   for (let i = 1; i < snake.length; i++) {
-    if (snake[i].x === snake[0].x && snake[i].y === snake[0].y){
+    if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) {
       return true;
     }
   }
   // bumping into wall
-  if(snake[0].x>=18 || snake[0].x <=0 || snake[0].y>=18 || snake[0].y <=0){
+  if (
+    snake[0].x >= 18 ||
+    snake[0].x <= 0 ||
+    snake[0].y >= 18 ||
+    snake[0].y <= 0
+  ) {
     return true;
   }
 }
@@ -47,17 +58,24 @@ function gameEngine() {
     Music.pause();
     GameOverSound.play();
 
+    // checking foe highscore
+    if (score > highScore) {
+      highScore = score;
+      localStorage.setItem("highScore", highScore);
+      updateHighScoreDisplay();
+    }
+
     // display the score
-    GO.classList.remove("hide")
-    GO.innerHTML=`<h1>!GAME OVER!</h1> <br> <b><p> your score is ${score}</p> <br> <p>Press any any to continue </p> <b> `;
-    window.addEventListener("keydown",(e)=>{
-      GO.classList.add("hide")
-    })
+    GO.classList.remove("hide");
+    GO.innerHTML = `<h1>!GAME OVER!</h1> <br> <b><p> your score is ${score}</p> <br> <p>Press any any to continue </p> <p> High Score is ${highScore}</p> <b> `;
+    window.addEventListener("keydown", (e) => {
+      GO.classList.add("hide");
+    });
 
     // reseting
     inputDir = { x: 0, y: 0 };
     snakeArr = [{ x: 10, y: 13 }];
-    food = { x: 4, y: 7 }
+    food = { x: 4, y: 7 };
     score = 0;
   }
 
@@ -109,8 +127,9 @@ function gameEngine() {
 // alert("Welcome to Hungry Snake");
 // alert("Use W,A,S,D to control the snake");
 window.requestAnimationFrame(main);
+intro.innerHTML = "";
 window.addEventListener("keydown", (e) => {
-  intro.classList.add("hide")
+  intro.classList.add("hide");
   inputDir = { x: 0, y: 0 };
   switch (e.key) {
     case "w":
