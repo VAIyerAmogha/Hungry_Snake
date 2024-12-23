@@ -20,7 +20,7 @@ let highScoreSpan = document.querySelector("#highscore");
 // Game Functions
 
 function updateHighScoreDisplay() {
-  highscoreSpan.innerHTML = highScore;
+  highScoreSpan.innerHTML = highScore;
 }
 
 function main(ctime) {
@@ -127,7 +127,7 @@ function gameEngine() {
 // alert("Welcome to Hungry Snake");
 // alert("Use W,A,S,D to control the snake");
 window.requestAnimationFrame(main);
-intro.innerHTML = "";
+highScoreSpan.innerHTML = highScore;
 window.addEventListener("keydown", (e) => {
   intro.classList.add("hide");
   inputDir = { x: 0, y: 0 };
